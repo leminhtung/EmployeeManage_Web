@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication1.Models.mvcEmployeeModel>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+}
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Insert Employee", "AddEmp")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a href="@Url.Action("AddEmp","Employee", new { id = item.UserId})" class="btn btn-default"> Edit</a>
+                    <a onclick="Delete(@item.UserId)" class="btn btn-default">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    @section scripts{
+        <script>
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+
+        function Delete(id) {
+            alertify.confirm('Employee Manage', 'Are you sure delete this employee?', function () {
+                window.location.href = '@Url.Action("Delete","Employee")/' + id;
+            }, null);
+        }
+        </script>
+    }
+
