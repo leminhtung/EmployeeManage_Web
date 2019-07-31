@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
         }
         public ActionResult AddEmp(int id = 0)
         {
-            if(id == 0) 
+            if (id == 0)
                 return View(new mvcEmployeeModel());
             else
             {
@@ -37,18 +37,19 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                HttpResponseMessage response = GlobalVariables.Webapiclient.PutAsJsonAsync("Admin/Update" + emp.UserId,emp).Result;
+                HttpResponseMessage response = GlobalVariables.Webapiclient.PutAsJsonAsync("Admin/Update" + emp.UserId, emp).Result;
                 TempData["SuccessMessage"] = "Update Successfully";
             }
-           
+
             return RedirectToAction("Index");
         }
-        
+
         public ActionResult Delete(int id)
         {
             HttpResponseMessage response = GlobalVariables.Webapiclient.DeleteAsync("Admin/Delete?id=" + id.ToString()).Result;
             TempData["SuccessMessage"] = "Delete Successfully";
             return RedirectToAction("Index");
         }
+        
     }
 }

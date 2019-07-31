@@ -1,0 +1,31 @@
+﻿@model  WebApplication1.Models.LoginModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/Login.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Đăng nhập bằng LoginID và Password</h2>
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        @Html.ValidationSummary(false, "", "error");
+        <div class="container">
+            <label for="uname"><b>LoginID</b></label>
+            @Html.TextBoxFor(model => model.AdminId, new { @class = "form-control", autofocus = "autofocus" })
+            <br />
+            <label for="psw"><b>Password</b></label>
+            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", type="passoword" })
+
+            <button type="submit">Login</button>
+        </div>
+    }
+</body>
+</html>
+
+
