@@ -6,7 +6,7 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class EmployeeController : Controller
+    public class EmployeeController : BaseController
     {
         // GET: Employee
         public ActionResult Index()

@@ -11,18 +11,22 @@
     <link href="~/Content/Login.css" rel="stylesheet" />
 </head>
 <body>
-    <h2>Đăng nhập bằng LoginID và Password</h2>
-    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
     {
-        @Html.ValidationSummary(false, "", "error");
+        @*@Html.ValidationSummary(false, "", "error");*@
         <div class="container">
             <label for="uname"><b>LoginID</b></label>
             @Html.TextBoxFor(model => model.AdminId, new { @class = "form-control", autofocus = "autofocus" })
+            @Html.ValidationMessageFor(model => model.AdminId, "", new { @class = "text-danger" })
             <br />
             <label for="psw"><b>Password</b></label>
-            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", type="passoword" })
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
-            <button type="submit">Login</button>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
         </div>
     }
 </body>

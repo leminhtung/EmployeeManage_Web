@@ -1,15 +1,21 @@
 ﻿using System.Net.Http;
 using System.Web.Mvc;
+using WebApplication1.Common;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class LoginController : Controller
+    public class AdminController : Controller
     {
         // GET: Login
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session[CommonContants.ADMIN_SESSION] = null;
+            return Redirect("/");
         }
         [HttpPost]
         public ActionResult Login(LoginModel emp)
@@ -18,11 +24,13 @@ namespace WebApplication1.Controllers
             var a = response.Content.ReadAsAsync<bool>().Result;
             if (a)
             {
+                var adminSesion = new LoginAdmin();
+                Session.Add(CommonContants.ADMIN_SESSION, adminSesion);
                 return RedirectToAction("Index", "Employee");
             }
             else
             {
-                ModelState.AddModelError("", "LoginID hoặc Password bị sai");
+                ModelState.AddModelError("", "LoginID or password is wrong");
             }
             return View("Index");
         }

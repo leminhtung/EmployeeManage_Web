@@ -8,9 +8,9 @@ namespace WebApplication1.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "mời nhập LoginID")]
+        [Required(ErrorMessage = "LoginID can note be blank")]
         public string AdminId { set; get; }
-        [Required(ErrorMessage = "mời nhập Password")]
+        [Required(ErrorMessage = "Password can note be blank")]
         public string Password { set; get; }
     }
 }
