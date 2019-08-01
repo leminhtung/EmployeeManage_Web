@@ -21,9 +21,16 @@
                 @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+
+                @*<ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Login", "Index", "Admin")</li>
+            <li>@Html.ActionLink("Register", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Log Out", "Logout", "Admin")</li>
+        </ul>*@
                 @if (Session[WebApplication1.Common.CommonContants.ADMIN_SESSION] == null)
                 {
-                    <a class="nav-link" href="@Url.Action("Index", "Employee")">Trang chủ</a>
+                    <a href="@Url.Action("Index", "Employee")">Home</a>
+                    <a href="@Url.Action("Index", "Employee")">Register</a>
                     <div class="topnav-right">
                         <a href="#search">Login</a>
                     </div>

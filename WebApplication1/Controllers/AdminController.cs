@@ -34,5 +34,13 @@ namespace WebApplication1.Controllers
             }
             return View("Index");
         }
+        [HttpPost]
+        public ActionResult Register(mvcEmployeeModel emp)
+        {
+            HttpResponseMessage response = GlobalVariables.Webapiclient.PostAsJsonAsync("Admin", emp).Result;
+            TempData["SuccessMessage"] = "Create Successfully";
+
+            return RedirectToAction("Index");
+        }
     }
 }
