@@ -11,10 +11,10 @@ namespace WebApplication1.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            IEnumerable<mvcEmployeeModel> empList;
             HttpResponseMessage response = GlobalVariables.Webapiclient.GetAsync("User").Result;
-            empList = response.Content.ReadAsAsync<IEnumerable<mvcEmployeeModel>>().Result;
-            return View(empList);
+            //empList = response.Content.ReadAsAsync<IEnumerable<mvcEmployeeModel>>().Result;
+            string jsonstring = response.Content.ReadAsStringAsync().Result;
+            return View(JsonConvert.DeserializeObject<List<mvcEmployeeModel>>(jsonstring));
         }
         public ActionResult AddEmp(int id = 0)
         {
@@ -50,6 +50,5 @@ namespace WebApplication1.Controllers
             TempData["SuccessMessage"] = "Delete Successfully";
             return RedirectToAction("Index");
         }
-        
     }
 }
