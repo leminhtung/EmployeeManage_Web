@@ -51,6 +51,8 @@ C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\Antlr3.Runti
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\Newtonsoft.Json.dll
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.dll
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.Mvc.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Net.Http.Formatting.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.Helpers.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.Mvc.dll
@@ -60,6 +62,8 @@ C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.W
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.WebPages.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.WebPages.Razor.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\WebGrease.dll
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.xml
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.Mvc.xml
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Net.Http.Formatting.xml
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.Helpers.xml
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\System.Web.Mvc.xml
@@ -76,7 +80,3 @@ C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\Employ
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\EmployeeManageWeb.csprojAssemblyReference.cache
-C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.dll
-C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.Mvc.dll
-C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.xml
-C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\PagedList.Mvc.xml

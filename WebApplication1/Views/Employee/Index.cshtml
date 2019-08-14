@@ -1,4 +1,5 @@
-﻿@model IEnumerable<WebApplication1.Models.mvcEmployeeModel>
+﻿@*@model IEnumerable<WebApplication1.Models.User>*@
+@model PagedList.IPagedList<WebApplication1.Models.User>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
@@ -14,19 +15,11 @@
 }
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th></th>
+        <th>UserID</th>
+        <th>UserName</th>
+        <th>PhoneNumber</th>
+        <th>Email</th>
+        <th>Action</th>
     </tr>
 
     @foreach (var item in Model)
@@ -52,6 +45,8 @@
     }
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+
 @section scripts{
     <script>
         $(function () {

@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Web.Mvc;
+using System.Web.Routing;
 using WebApplication1.Common;
 using WebApplication1.Models;
 
@@ -20,13 +21,15 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel emp)
         {
-            HttpResponseMessage response = GlobalVariables.Webapiclient.PostAsJsonAsync("Admin",emp).Result;
+            HttpResponseMessage response = GlobalVariables.Webapiclient.PostAsJsonAsync("admin", emp).Result;
             var a = response.Content.ReadAsAsync<bool>().Result;
             if (a)
             {
                 var adminSesion = new LoginAdmin();
                 Session.Add(CommonContants.ADMIN_SESSION, adminSesion);
-                return RedirectToAction("Index", "Employee");
+                return RedirectToAction("Index", new RouteValueDictionary(
+                new { controller = "Employee", action = "Index", searchString = "", page = 1 , pageSize = 5}));
+                //return RedirectToAction("Index", "Employee");
             }
             else
             {
@@ -35,7 +38,7 @@ namespace WebApplication1.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Register(mvcEmployeeModel emp)
+        public ActionResult Register(User emp)
         {
             HttpResponseMessage response = GlobalVariables.Webapiclient.PostAsJsonAsync("Admin", emp).Result;
             TempData["SuccessMessage"] = "Create Successfully";
