@@ -1,17 +1,17 @@
 ﻿@*@model IEnumerable<WebApplication1.Models.User>*@
 @model PagedList.IPagedList<WebApplication1.Models.User>
 @using PagedList.Mvc;
+
 @{
     ViewBag.Title = "Index";
 }
 <h2>Index</h2>
-
 <p>
     @Html.ActionLink("Insert Employee", "AddEmp")
 </p>
 @using (Html.BeginForm("Index", "Employee", FormMethod.Get))
 {
-    <input type="text" name="searchString" placeholder="Search for names.." title="Type in a name"><input type="submit" value="Tìm Kiếm" />
+    <input type="text" id="txtKeyword" name="searchString" placeholder="Search for names.." title="Type in a name"><input type="submit" value="Tìm Kiếm" />
 }
 <table class="table">
     <tr>
@@ -46,7 +46,7 @@
 
 </table>
 @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
-
+<script src="~/Scripts/baseController.js"></script>
 @section scripts{
     <script>
         $(function () {
@@ -60,6 +60,7 @@
                 window.location.href = '@Url.Action("Delete","Employee")/' + id;
             }, null);
         }
+        
     </script>
 }
 

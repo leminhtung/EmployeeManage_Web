@@ -80,3 +80,7 @@ C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\Employ
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\obj\Debug\EmployeeManageWeb.csprojAssemblyReference.cache
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\AntiXssLibrary.dll
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\HtmlSanitizationLibrary.dll
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\AntiXssLibrary.xml
+C:\Users\tunglm2\source\repos\EmployeeManageWeb\WebApplication1\bin\HtmlSanitizationLibrary.xml

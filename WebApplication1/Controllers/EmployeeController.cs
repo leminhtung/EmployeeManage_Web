@@ -32,6 +32,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddEmp(User emp)
         {
             if (emp.UserId == 0)
